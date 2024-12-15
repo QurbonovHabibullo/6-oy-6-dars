@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ brand.name }}</title>
+</head>
+<body>
+    <h1>{{ brand.name }} ({{ brand.country }})</h1>
+    <ul>
+        {% for car in cars %}
+            <li><a href="{% url 'car_detail' car.id %}">{{ car.name }} - {{ car.price }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Orqaga</a>
+</body>
+</html>

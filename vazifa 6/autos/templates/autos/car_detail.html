@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ car.name }}</title>
+</head>
+<body>
+    <h1>{{ car.name }}</h1>
+    <p>Price: {{ car.price }}</p>
+    <p>Brand: {{ car.brand.name }} - {{ car.brand.country }}</p>
+    {% if car.photo %}
+        <img src="{{ car.photo.url }}" alt="{{ car.name }}" style="width: 300px;">
+    {% endif %}
+    <a href="{% url 'brand_cars' car.brand.id %}">Orqaga</a>
+</body>
+</html>

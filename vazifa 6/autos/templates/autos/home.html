@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Autosalon</title>
+</head>
+<body>
+    <h1>Brandlar</h1>
+    <ul>
+        {% for brand in brands %}
+            <li><a href="{% url 'brand_cars' brand.id %}">{{ brand.name }} - {{ brand.country }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <h1>Barcha Mashinalar</h1>
+    <ul>
+        {% for car in cars %}
+            <li><a href="{% url 'car_detail' car.id %}">{{ car.name }} - {{ car.price }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
